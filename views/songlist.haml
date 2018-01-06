@@ -1,0 +1,10 @@
+.w3-row
+  - list.each_slice(3) do |s|    
+    .w3-col.l4
+      %p= "#{s[0].artist} - #{s[0].name}"
+    .w3-col.l4
+      - if s.length > 1
+        %p= "#{s[1].artist} - #{s[1].name}"
+    .w3-col.l4
+      - if s.length > 2
+        %p= "#{s[2].artist} - #{s[2].name}"
