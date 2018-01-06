@@ -1,0 +1,28 @@
+.w3-col.s6.w3-center
+  RSVP using the form below.
+  .w3-container.w3-white.w3-center
+    %form{action: "rsvp", method: "post"}
+      .w3-row-padding
+        .w3-half
+          %label{for: "first"} First Name:
+        .w3-half
+          %input.w3-input#first-input{name: "first", type: "text"}
+      .w3-row-padding
+        .w3-half
+          %label{for: "last"} Last Name:
+        .w3-half
+          %input.w3-input#last-input{name: "last", type: "text"}
+      .w3-row-padding
+        .w3-half
+          %label{for: "diet"} Any dietary restrictions?
+        .w3-half
+          %input.w3-input#diet-input{name: "diet", type: "text"}
+      .w3-row
+        %i Marnie hopes you can make it!
+      .w3-row-padding
+        .w3-half
+          %button.w3-block.w3-button.w3-green{type: "submit", name: "RSVP", value: "Yes"} I'll Be There!
+        .w3-half
+          %button.w3-block.w3-button.w3-red{type: "submit", name: "RSVP", value: "No"} I Can't Make It
+.w3-col.s6.w3-center
+  %img{src: 'marnie-face.jpg', style: "width: 60%;"}

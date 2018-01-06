@@ -1,0 +1,130 @@
+body,h1,h2 {
+    font-family: "Amatic SC", sans-serif;
+    font-size: 24px;
+}
+
+body, html {
+    height: 100%;
+    background-color: 
+}
+
+p {
+    line-height: 2
+}
+
+#header {
+    position: relative;
+    margin: 0;
+    height: 200px;
+    width: 100%;
+}
+
+#top-mountains {
+    margin: 0 auto;
+    height: 200px;
+    width: 100%;
+    background: url("mountains.jpg") no-repeat center center;
+    background-size: cover;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+#titlebar {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+}
+
+.title {
+    opacity: 1;
+    width: 100%;
+    text-align: center;
+    top: 10%;
+    font-size: 48px;
+    font-family: "Sacramento", cursive;
+}
+
+.small-title {
+    opacity: 1;
+    width: 100%;
+    top: 10%;
+    text-align: center;
+    font-size: 24px;
+    font-family: "Sacramento", cursive;
+}
+
+#subtitle {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    top: 50%;
+    font-size: 24px;
+    font-family: "Amatic SC", cursive;
+}
+
+#content {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#footer {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    font-size: 10px;
+    bottom: 12px;
+    margin: 0 auto;
+}
+
+#nav_links {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    position: absolute;
+    top: 75%;
+    margin: 0 auto;
+}
+
+#nav-links {
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: "Amatic SC", cursive;
+    font-size: 24px;
+}
+
+#nav_links table {
+
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 0px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#spacer {
+    height: 10px;
+}

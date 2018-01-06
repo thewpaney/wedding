@@ -1,0 +1,50 @@
+!!!
+%html
+  %head
+    %link{rel: "stylesheet", href: "w3.css"}
+    %link{rel: "stylesheet", href: "style.css"}
+    %link{rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Amatic+SC"}
+    %link{rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Sacramento"}
+  %body
+    .w3-container#top-mountains
+    .w3-container#titlebar
+      .w3-row.w3-hide-large.w3-hide-medium.small-title
+        .w3-col.m4.w3-center
+          Kate and
+        .w3-col.m4.w3-center
+          Matthew's
+        .w3-col.m4.w3-center
+          Wedding
+      .w3-row.w3-hide-small.title
+        .w3-col.s12.w3-center
+          Kate and Matthew's Wedding
+      .w3-row
+        #subtitle
+          10.5.2018
+      .w3-row
+        %table#nav-links
+          %tr
+            %td
+              %a{href: '/rsvp'} RSVP
+            %td
+              %span -
+            %td.dropdown
+              %a{href: '#'} Locations
+              .dropdown-content
+                %a{href: '/ceremony'} Ceremony
+                %a{href: '/reception'} Reception
+            %td
+              %span -
+            %td
+              %a{href: '/test'} Test
+            %td
+    .w3-row
+      .w3-col.s12.w3-center
+        #spacer
+    .w3-row#content
+      =yield
+    .w3-row#footer
+      .w3-col.s12.w3-center
+        Questions? Contact us
+        %a{href: 'mailto:kate.matthew.wedding@gmail.com'} here
+        for more info!

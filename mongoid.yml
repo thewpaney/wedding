@@ -1,0 +1,12 @@
+development:
+  clients:
+    default:
+      database: cocktails
+      hosts:
+        - localhost:27017
+      options:
+        read:
+          mode: :primary
+        write:
+          w: 1
+        max_pool_size: 1
