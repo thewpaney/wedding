@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'sinatra'
+require 'sinatra/flash'
 require 'mongoid'
 require 'haml'
 
@@ -24,6 +25,9 @@ class SongRequest
 end
 
 class WeddingApp < Sinatra::Base
+
+  enable :sessions
+  register Sinatra::Flash
   
   valid_actions = ["rsvp", "ceremony", "reception", "lodging", "faq", "registry"]
   
@@ -38,8 +42,15 @@ class WeddingApp < Sinatra::Base
     r.last = params['last']
     r.result = params['RSVP']
     r.diet = params['diet']
-    puts r.save!
-    puts r.inspect
+    if r.first.nil? or r.first == ""
+      flash[:warn] = "Please tell us your first name!"
+    elsif r.last.nil? or r.last == ""
+      flash[:warn] = "Please tell us your last name!"
+    elsif r.save!
+      flash[:notice] = "RSVP received!"
+    else
+      flash[:warn] = "Something went wrong. Please try again."
+    end
     redirect '/rsvp'
   end
 
@@ -47,7 +58,15 @@ class WeddingApp < Sinatra::Base
     s = SongRequest.new
     s.name = params['name']
     s.artist = params['artist']
-    puts s.save!
+    if s.name.nil? or s.name == ""
+      flash[:warn] = "Please specify a song name."
+    elsif s.artist.nil? or s.artist == ""
+      flash[:warn] = "Please specify an artist."
+    elsif s.save!
+      flash[:notice] = "Song request received!"
+    else
+      flash[:warn] = "Something went wrong. Please try again."
+    end
     redirect '/rsvp'
   end
 
@@ -66,6 +85,9 @@ class WeddingApp < Sinatra::Base
 end
 
 class WeddingPrivate < Sinatra::Base
+
+  enable :sessions
+  register Sinatra::Flash
   
   use Rack::Auth::Basic, "Restricted Area" do |username, password|
     [username, password] == ['marnie', 'sardines']  

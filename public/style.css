@@ -65,9 +65,15 @@ p {
 #content {
     width: 80%;
     margin: 0 auto;
+    padding-bottom: 20px;
 }
 
 #footer {
+    height: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     font-size: 18px;
 }
 
@@ -133,4 +139,50 @@ a:hover {
 p.text {
     font-family: 'Josefin Slab', serif;
     font-size: 14pt;
+}
+
+ /* The alert message box */
+.alert-notice {
+    padding: 5px;
+    background-color: rgb(163, 198, 232);
+    font-size: 24px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.alert-warn {
+    padding: 5px;
+    background-color: rgb(237, 183, 169);
+    font-size: 24px;
+    color: white;
+    margin-bottom: 15px;
+}
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 48px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+} 
+
+.landing {
+    font-size: 36px;
+}
+
+.landing-large {
+    font-size: 48px;
+}
+
+#pagebody {
+    min-height: 50%;
+    position: relative;
 }

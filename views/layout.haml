@@ -43,12 +43,14 @@
         .w3-col.s2
           %a{href: '/registry'} Registries
     .w3-container#pagebody
+      .w3-row#spacer
       .w3-row
-        .w3-col.s12.w3-center
-          #spacer
+        - flash.keys.each do |type|
+          .alert{class: "alert-#{type}"}
+            %span.closebtn{onclick: "this.parentElement.style.display='none';"} &times;
+            = flash[type]
       .w3-row#content
         =yield
-      .w3-row#spacer
       .w3-row#footer
         .w3-col.l12.w3-center
           Questions? Contact us
