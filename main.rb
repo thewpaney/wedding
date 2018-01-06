@@ -3,8 +3,6 @@ require 'sinatra'
 require 'mongoid'
 require 'haml'
 
-valid_actions = ["rsvp", "ceremony", "reception", "test"]
-
 Mongoid.load!("mongoid.yml")
 
 class RSVP
@@ -19,6 +17,8 @@ end
 
 class WeddingApp < Sinatra::Base
 
+  valid_actions = ["rsvp", "ceremony", "reception", "lodging", "FAQ"]
+  
   get '/' do
     haml :index
   end
@@ -42,4 +42,7 @@ class WeddingApp < Sinatra::Base
     r.save!
   end
 
+  run! if app_file == $0
+  
 end
+
