@@ -13,6 +13,7 @@ class RSVP
   field :first, type: String
   field :last, type: String
   field :result, type: String
+  field :plus_one, type: String
   field :diet, type: String
 end
 
@@ -41,6 +42,7 @@ class WeddingApp < Sinatra::Base
     r.first = params['first']
     r.last = params['last']
     r.result = params['RSVP']
+    r.plus_one = params['plus_one']
     r.diet = params['diet']
     if r.first.nil? or r.first == ""
       flash[:warn] = "Please tell us your first name!"

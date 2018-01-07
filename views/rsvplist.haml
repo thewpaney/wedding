@@ -2,8 +2,8 @@
   .w3-col.l6
     %strong Coming
     - coming.each do |r|
-      %p= "#{r.first} #{r.last} - #{r.diet}"
+      %p= "#{r.first} #{r.last} #{r.plus_one === 'Yes' ? 'and Guest' : ''} - #{r.diet}"
   .w3-col.l6
     %strong Not Coming
     - not_coming.each do |r|
-      %p= "#{r.first} #{r.last} - #{r.diet}"
+      %p= "#{r.first} #{r.last} #{r.plus_one === 'Yes' ? 'and Guest' : ''} - #{r.diet}"
