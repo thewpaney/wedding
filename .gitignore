@@ -1,0 +1,3 @@
+*.sock
+*.log
+*.pid

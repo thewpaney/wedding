@@ -92,6 +92,8 @@ class WeddingPrivate < Sinatra::Base
   register Sinatra::Flash
   
   use Rack::Auth::Basic, "Restricted Area" do |username, password|
+    p ENV['WEDDING_NAME']
+    p ENV['WEDDING_PASS']
     username == ENV['WEDDING_NAME'] and password == ENV['WEDDING_PASS']
   end
 
