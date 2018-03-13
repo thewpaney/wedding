@@ -1,12 +1,15 @@
 development:
   clients:
     default:
-      database: cocktails
-      hosts:
-        - localhost:27017
+      uri: <%= ENV['MONGODB_URI'] %>
       options:
-        read:
-          mode: :primary
-        write:
-          w: 1
-        max_pool_size: 1
+        connect_timeout: 15
+
+production:
+  clients:
+    default:
+      uri: <%= ENV['MONGODB_URI'] %>
+      options:
+        connect_timeout: 15
+  
+  

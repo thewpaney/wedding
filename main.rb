@@ -8,7 +8,7 @@ Mongoid.load!("mongoid.yml")
 
 class RSVP
   include Mongoid::Document
-  store_in collection: "rsvp", database: "wedding"
+  store_in collection: "rsvp", database: "heroku_7xq56z7b"
 
   field :first, type: String
   field :last, type: String
@@ -19,7 +19,7 @@ end
 
 class SongRequest
   include Mongoid::Document
-  store_in collection: "SongRequests", database: "wedding"
+  store_in collection: "SongRequests", database: "heroku_7xq56z7b"
 
   field :name, type: String
   field :artist, type: String
@@ -92,8 +92,6 @@ class WeddingPrivate < Sinatra::Base
   register Sinatra::Flash
   
   use Rack::Auth::Basic, "Restricted Area" do |username, password|
-    p ENV['WEDDING_NAME']
-    p ENV['WEDDING_PASS']
     username == ENV['WEDDING_NAME'] and password == ENV['WEDDING_PASS']
   end
 

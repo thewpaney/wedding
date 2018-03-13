@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.4.2'
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -10,8 +12,8 @@ gem 'mongo'
 gem 'mongoid'
 # The web framework!
 gem 'sinatra'
-# A web server for testing
-gem 'thin'
+# Heroku web server
+gem 'puma'
 # HTML as Markup Language (>erb)
 gem 'haml'
 # The HTTP server

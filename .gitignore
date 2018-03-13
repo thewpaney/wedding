@@ -1,3 +1,4 @@
 *.sock
 *.log
 *.pid
+.env
