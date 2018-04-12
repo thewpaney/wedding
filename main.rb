@@ -106,5 +106,11 @@ class WeddingPrivate < Sinatra::Base
   get '/songlist' do  
     haml :songlist, locals: {list: SongRequest.all}
   end
+
+  post '/clear' do
+    SongRequest.delete_all
+    flash[:notice] = "Song list cleared."
+    redirect '/songlist', locals: {list: SongRequest.all}
+  end
   
 end
