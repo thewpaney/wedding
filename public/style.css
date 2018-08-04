@@ -89,6 +89,15 @@ a:hover {
     text-decoration: underline;
 }
 
+a.extlink {
+    text-decoration: underline;
+    color: rgb(0, 0, 0);
+}
+
+a.extlink:hover {
+    color: rgb(163, 198, 232);
+}
+
 .dropdown {
     position: relative;
     display: inline-block;
