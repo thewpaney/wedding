@@ -30,7 +30,7 @@ class WeddingApp < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
   
-  valid_actions = ["rsvp", "ceremony", "reception", "lodging", "faq", "registry"]
+  valid_actions = ["rsvp", "ceremony", "reception", "lodging", "faq", "registry", "activities"]
   
   get '/' do
     haml :index
